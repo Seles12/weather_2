@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <weather_2> </weather_2>
-    <car_2> </car_2>
+    <!-- <car_2> </car_2> -->
   </div>
 </template>
 

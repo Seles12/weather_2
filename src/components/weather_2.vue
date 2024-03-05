@@ -2,7 +2,26 @@
   <div class="header">
     <div class="form">
       <h2 class="we-1">Weather City Information</h2>
-      <nav_form></nav_form>
+
+      <!-- NAV BAR -->
+      <div class="nav">
+        <b-navbar type="" variant="">
+          <b-nav-form>
+            <b-form-input
+              class="mr-sm-2"
+              placeholder="Type City"
+            ></b-form-input>
+            <b-button
+              variant="outline-success"
+              class="my-2 my-sm-0"
+              type="submit"
+              @click="alterarcity"
+            >
+              >Search</b-button
+            >
+          </b-nav-form>
+        </b-navbar>
+      </div>
       <div class="let-1" v-if="weatherData">
         <p><strong>City:</strong> {{ weatherData.name }}</p>
         <p><strong>Temperature:</strong> {{ weatherData.main.temp }}°C</p>
@@ -20,23 +39,19 @@
 <script>
 import axios from "axios";
 
-import nav_form from "./nav-form.vue";
-
 export default {
-  components: {
-    nav_form,
-  },
   data() {
     return {
       weatherData: null,
       apiKey: "06dc7c3527952552932328eb2812350d",
-      city: "bicester", // You can change the city
+      v: " CAMPINAS", // You can change the city
     };
   },
-  mounted() {
-    this.getWeatherData();
-  },
+
   methods: {
+    alterarcity() {
+      this.weatherData.name = "london";
+    },
     async getWeatherData() {
       try {
         const response = await axios.get(
@@ -47,6 +62,9 @@ export default {
         console.error("Error fetching weather data:", error);
       }
     },
+  },
+  mounted() {
+    this.getWeatherData();
   },
 };
 </script>
@@ -90,6 +108,11 @@ export default {
 }
 .nav_form {
   margin-bottom: 10px;
+}
+.nav {
+  display: flex;
+  margin-left: 100px;
+  margin-top: 100px;
 }
 
 /* Add your styles here */
