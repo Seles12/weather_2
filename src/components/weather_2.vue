@@ -44,7 +44,7 @@ export default {
     return {
       weatherData: null,
       apiKey: "06dc7c3527952552932328eb2812350d",
-      v: " CAMPINAS", // You can change the city
+      city: " CAMPINAS", // You can change the city
     };
   },
 
