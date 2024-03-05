@@ -9,14 +9,13 @@
           <b-nav-form>
             <b-form-input
               class="mr-sm-2"
+              v-model="city"
               placeholder="Type City"
-            ></b-form-input>
+            />
             <b-button
               variant="outline-success"
               class="my-2 my-sm-0"
-              type="submit"
-              @click="alterarcity"
-            >
+              @click="setCity"
               >Search</b-button
             >
           </b-nav-form>
@@ -44,14 +43,20 @@ export default {
     return {
       weatherData: null,
       apiKey: "06dc7c3527952552932328eb2812350d",
-      city: " CAMPINAS", // You can change the city
+      city: "LONDON", // You can change the city
     };
   },
-
   methods: {
-    alterarcity() {
-      this.weatherData.name = "london";
+    async setCity() {
+      // this.weatherData.name = "london";
+
+      // Add Validation here:
+      // IF city is empty, return an error
+      // Else, call getWeatherData()
+
+      await this.getWeatherData();
     },
+
     async getWeatherData() {
       try {
         const response = await axios.get(
@@ -63,8 +68,8 @@ export default {
       }
     },
   },
-  mounted() {
-    this.getWeatherData();
+  async mounted() {
+    await this.getWeatherData();
   },
 };
 </script>
