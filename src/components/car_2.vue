@@ -42,7 +42,7 @@
         </b-carousel-slide>
       </b-carousel>
 
-      <weather_2 id="weather-widget"></weather_2>
+      <weather_2 id="weather-widget"/>
 
     </div>
   </div>
