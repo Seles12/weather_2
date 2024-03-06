@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="form">
-      <h2 class="we-1">Weather City Information</h2>
+      <h2 class="cab_2">Weather City Information</h2>
 
       <!-- NAV BAR -->
       <div class="nav">
@@ -13,6 +13,7 @@
               placeholder="Type City"
             />
             <b-button
+              v-b-modal.modal-1
               variant="outline-success"
               class="my-2 my-sm-0"
               @click="setCity"
@@ -20,13 +21,19 @@
             >
           </b-nav-form>
         </b-navbar>
-      </div>
-      <div class="let-1" v-if="weatherData">
-        <p><strong>City:</strong> {{ weatherData.name }}</p>
+        <!--modal -->
+        <div>
+          <b-modal id="modal-1" title="Weather City Information">
+            <p class="my-4"><p><strong>City:</strong> {{ weatherData.name }}</p>
         <p><strong>Temperature:</strong> {{ weatherData.main.temp }}°C</p>
         <p>
           <strong>Description:</strong> {{ weatherData.weather[0].description }}
-        </p>
+        </p></p>
+          </b-modal>
+        </div>
+      </div>
+      <div class="let-1" v-if="weatherData">
+        
       </div>
       <div v-else>
         <p>Loading...</p>
@@ -74,7 +81,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .header {
   display: flex;
   justify-content: center;
@@ -84,19 +91,18 @@ export default {
   display: flex;
   flex-direction: column;
   width: 670px;
-  height: 700px;
+  height: 200px;
   gap: 10px;
   padding-bottom: 0.4em;
-  background-color: #cccccc;
+  background-color: #d9f8cb;
   border-radius: 25px;
-  transition: 0.4s ease-in-out;
 }
 
 .form:hover {
   transform: scale(1.05);
   border: 1px solid rgb(215, 228, 227) s;
 }
-.we-1 {
+.cab_2 {
   display: flex;
   justify-content: center;
   font-size: 3.2em;
