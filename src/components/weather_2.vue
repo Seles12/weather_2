@@ -85,7 +85,7 @@ export default {
 .header {
   display: flex;
   justify-content: center;
-  margin-top: 90px;
+  /* margin-top: 90px; */
 }
 .form {
   display: flex;
@@ -98,10 +98,10 @@ export default {
   border-radius: 25px;
 }
 
-.form:hover {
+/* .form:hover {
   transform: scale(1.05);
   border: 1px solid rgb(215, 228, 227) s;
-}
+} */
 .cab_2 {
   display: flex;
   justify-content: center;

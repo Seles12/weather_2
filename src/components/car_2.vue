@@ -19,18 +19,14 @@
           caption="First slide"
           text="Nulla vitae elit libero, a pharetra augue mollis interdum."
           img-src="https://picsum.photos/1024/480/?image=52"
-        ></b-carousel-slide>
+        />
 
         <!-- Slides with custom text -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-          <h1>Hello world!</h1>
-        </b-carousel-slide>
+        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54"><h1>Hello world!</h1></b-carousel-slide>
 
         <!-- Slides with image only -->
-        <b-carousel-slide
-          img-src="https://picsum.photos/1024/480/?image=58"
-        ></b-carousel-slide>
-        <weather_2></weather_2>
+        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"/>
+        
         <!-- Slides with img slot -->
         <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
         <b-carousel-slide>
@@ -42,8 +38,12 @@
               src="https://picsum.photos/1024/480/?image=55"
               alt="image slot"
             />
-          </template> </b-carousel-slide
-      ></b-carousel>
+          </template>
+        </b-carousel-slide>
+      </b-carousel>
+
+      <weather_2 id="weather-widget"></weather_2>
+
     </div>
   </div>
 </template>
@@ -67,3 +67,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  #weather-widget {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+</style>
