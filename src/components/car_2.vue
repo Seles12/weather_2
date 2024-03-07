@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>
+    <div class="car_2">
       <b-carousel
         id="carousel-1"
         v-model="slide"
-        :interval="10000"
+        :interval="4000"
         controls
         indicators
         background="#ababab"
@@ -15,18 +15,41 @@
         @sliding-end="onSlideEnd"
       >
         <!-- Text slides with image -->
-        <b-carousel-slide
-          caption="First slide"
-          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-          img-src="https://picsum.photos/1024/480/?image=52"
-        />
+        <b-carousel-slide>
+          <template #img>
+            <img
+              class="d-block img-fluid w-100"
+              width="1024"
+              height="480"
+              src="https://picsum.photos/1024/480/?image=193"
+              alt="image slot"
+            />
+          </template>
+        </b-carousel-slide>
 
         <!-- Slides with custom text -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54"><h1>Hello world!</h1></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=197"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=84"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=110"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=187"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=164"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://picsum.photos/1024/480/?image=206"
+        ></b-carousel-slide>
 
         <!-- Slides with image only -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"/>
-        
+        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=238" />
+
         <!-- Slides with img slot -->
         <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
         <b-carousel-slide>
@@ -35,15 +58,14 @@
               class="d-block img-fluid w-100"
               width="1024"
               height="480"
-              src="https://picsum.photos/1024/480/?image=55"
+              src="https://picsum.photos/1024/480/?image=255"
               alt="image slot"
             />
           </template>
         </b-carousel-slide>
       </b-carousel>
 
-      <weather_2 id="weather-widget"/>
-
+      <weather_2 id="weather-widget" />
     </div>
   </div>
 </template>
@@ -69,11 +91,14 @@ export default {
 </script>
 
 <style scoped>
-  #weather-widget {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
+#weather-widget {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+.car_2 {
+  width: auto;
+  height: auto;
+}
 </style>

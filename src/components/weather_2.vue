@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="form">
-      <h2 class="cab_2">Weather City Information</h2>
+      <h4 class="cab_2">
+        <b-badge variant="success">Weather City Information </b-badge>
+      </h4>
 
       <!-- NAV BAR -->
       <div class="nav">
@@ -23,20 +25,16 @@
         </b-navbar>
         <!--modal -->
         <div>
-          <b-modal id="modal-1" title="Weather City Information">
-            <p class="my-4"><p><strong>City:</strong> {{ weatherData.name }}</p>
-        <p><strong>Temperature:</strong> {{ weatherData.main.temp }}°C</p>
-        <p>
-          <strong>Description:</strong> {{ weatherData.weather[0].description }}
-        </p></p>
+          <b-modal id="modal-1" title=" Weather City Information">
+            <p class="my-4"></p>
+            <p><strong>City:</strong> {{ weatherData.name }}</p>
+            <p><strong>Temperature:</strong> {{ weatherData.main.temp }}°C</p>
+            <p>
+              <strong>Description:</strong>
+              {{ weatherData.weather[0].description }}
+            </p>
           </b-modal>
         </div>
-      </div>
-      <div class="let-1" v-if="weatherData">
-        
-      </div>
-      <div v-else>
-        <p>Loading...</p>
       </div>
     </div>
   </div>
@@ -50,12 +48,12 @@ export default {
     return {
       weatherData: null,
       apiKey: "06dc7c3527952552932328eb2812350d",
-      city: "LONDON", // You can change the city
+      city: "london", // You can change the city
     };
   },
   methods: {
     async setCity() {
-      // this.weatherData.name = "london";
+      // this.weatherData.name = "";
 
       // Add Validation here:
       // IF city is empty, return an error
@@ -85,23 +83,24 @@ export default {
 .header {
   display: flex;
   justify-content: center;
-  /* margin-top: 90px; */
+  margin-top: 10px;
 }
 .form {
   display: flex;
   flex-direction: column;
-  width: 670px;
-  height: 200px;
+  width: 700px;
+  height: 350px;
   gap: 10px;
-  padding-bottom: 0.4em;
+  /* padding-bottom: 0.4em; */
   background-color: #d9f8cb;
   border-radius: 25px;
+  position: relative;
 }
 
-/* .form:hover {
+.form:hover {
   transform: scale(1.05);
   border: 1px solid rgb(215, 228, 227) s;
-} */
+}
 .cab_2 {
   display: flex;
   justify-content: center;
@@ -122,8 +121,9 @@ export default {
 }
 .nav {
   display: flex;
+  position: absolute;
   margin-left: 100px;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 /* Add your styles here */
